@@ -12,7 +12,16 @@ using namespace sf;
 int main() {
 //Opening the new window//
 
-	RenderWindow tetris_window(VideoMode(500,800), "Tetris", Style::Default |Style::Titlebar| Style::Close | Style::Resize);
+	RenderWindow tetris_window(VideoMode(500,800), "Tetris", Style::Default |Style::Close | Style::Resize);
+
+//to add the tiles of tetris
+	RectangleShape player(Vector2f(20, 100));
+	Texture t;
+	player.setPosition(206.0f, 206.0f);
+	t.loadFromFile("tiles.png");
+	player.setTexture(&t);
+	Sprite s(t);
+
 	Event ev;
 
 ////window stuff above(just basic window design)////
@@ -33,6 +42,7 @@ int main() {
 				if (ev.key.code == Keyboard::Escape) {
 					tetris_window.close();
 					break;
+					//cout << "hello";
 				}
 			}
 		}
@@ -41,7 +51,9 @@ int main() {
 
 
 //Render
-	tetris_window.clear();
+	tetris_window.clear(Color::Black);
+	//ingame
+	tetris_window.draw(player);
 	/*
 	
 		.....game....

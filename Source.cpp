@@ -45,7 +45,7 @@ int main()
 {
     srand(time(0));
 
-    RenderWindow window(VideoMode(320, 480), "The Game!");
+    RenderWindow window(VideoMode(490, 800), "The Game!");
 
     Texture t1;
     t1.loadFromFile("images/tiles.png");
@@ -139,7 +139,8 @@ int main()
             {
                 if (field[i][j] == 0) continue;
                 s.setTextureRect(IntRect(field[i][j] * 18, 0, 18, 18));
-                s.setPosition(j * 18, i * 18);
+                s.setScale(Vector2f(2, 2));
+                s.setPosition(j * 36, i * 36);
                 s.move(28, 31); //offset
                 window.draw(s);
             }
@@ -147,7 +148,8 @@ int main()
         for (int i = 0; i < 4; i++)
         {
             s.setTextureRect(IntRect(colorNum * 18, 0, 18, 18));
-            s.setPosition(a[i].x * 18, a[i].y * 18);
+            s.setScale(Vector2f(2, 2));
+            s.setPosition(a[i].x * 36, a[i].y * 36);
             s.move(28, 31); //offset
             window.draw(s);
         }

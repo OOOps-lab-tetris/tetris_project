@@ -141,6 +141,7 @@ int main()
                 s.setTextureRect(IntRect(field[i][j] * 18, 0, 18, 18));
                 s.setScale(Vector2f(2, 2));
                 s.setPosition(j * 36, i * 36);
+               // s.setOrigin(Vector2f(245,0));
                 s.move(28, 31); //offset
                 window.draw(s);
             }
@@ -150,7 +151,8 @@ int main()
             s.setTextureRect(IntRect(colorNum * 18, 0, 18, 18));
             s.setScale(Vector2f(2, 2));
             s.setPosition(a[i].x * 36, a[i].y * 36);
-            s.move(28, 31); //offset
+            s.move(28, 30);
+            //s.setOrigin(Vector2f(245,0));
             window.draw(s);
         }
 

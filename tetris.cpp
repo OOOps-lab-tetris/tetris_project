@@ -107,11 +107,17 @@ void tetris::tet_check()
 }
 void tetris::tet_over()
 {
-     sf::Texture bk;
-                bk.loadFromFile("images/gameover.jpg");
-                sf::Sprite bkSprite;
-                bkSprite.setTexture(bk);
-                window->draw(bkSprite);
+    sf::Texture bk;
+    bk.loadFromFile("images/gameover.jpg");
+    sf::Sprite bkSprite;
+    bkSprite.setTexture(bk);
+    float frameWidth=490;
+    float frameheight=800;
+    float scaleX=frameWidth/bkSprite.getLocalBounds().width;
+    float scaley=frameheight/bkSprite.getLocalBounds().height;
+    // float scaleFactor=std::min(scaleX,scaley);
+    bkSprite.setScale(scaleX,scaley);
+    window->draw(bkSprite);
                 
 
 }

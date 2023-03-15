@@ -68,7 +68,7 @@ void tetris::tet_timer()
             for (int i = 0; i < 4; i++)
             {
                 a[i].x = figures[n][i] % 2;
-                a[i].y = figures[n][i] / 2;
+                a[i].y = figures[n][i]/2;
             }
         }
 
@@ -87,7 +87,9 @@ void tetris::tet_check()
             if (field[i][j]) count++;
             field[k][j] = field[i][j];
         }
-        if (count < N) k--;
+        if (count < N) {
+            k--;
+        }
     }
     dx = 0; rotate = 0; delay = 0.3;
 }
@@ -111,7 +113,7 @@ void tetris::tet_draw()
     for (int i = 0; i < 4; i++)
     {
         s.setTextureRect(sf::IntRect(colorNum * 18, 0, 18, 18));
-        s.setPosition(a[i].x * 18, a[i].y * 18);
+        //s.setPosition((a[i].x * 18, a[i].y * 18);
         s.setScale(sf::Vector2f(2, 2));
         s.setPosition(a[i].x* 36, a[i].y * 36);
         s.move(28, 30); //offset

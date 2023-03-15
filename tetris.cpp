@@ -1,4 +1,5 @@
 #include "tetris.h"
+#include<iostream>
 
 void tetris::tet_event()
 {
@@ -62,7 +63,6 @@ void tetris::tet_timer()
         if (!space_check())
         {
             for (int i = 0; i < 4; i++) field[b[i].y][b[i].x] = colorNum;
-
             colorNum = 1 + rand() % 7;
             int n = rand() % 7;
             for (int i = 0; i < 4; i++)
@@ -90,8 +90,12 @@ void tetris::tet_check()
         if (count < N) {
             k--;
         }
+        if (count == N) {
+            score++;
+        }
     }
     dx = 0; rotate = 0; delay = 0.3;
+    std::cout << score;
 }
 
 void tetris::tet_draw()
@@ -109,13 +113,21 @@ void tetris::tet_draw()
             window->draw(s);
         }
     }
-
+    int t = 4;
     for (int i = 0; i < 4; i++)
     {
         s.setTextureRect(sf::IntRect(colorNum * 18, 0, 18, 18));
         //s.setPosition((a[i].x * 18, a[i].y * 18);
+       // a[i].x+=6;
+        /*if (a[i]) {
+            a[i].x += t;
+            t++;
+        }
+        else {
+            t = 1;
+        }*/
         s.setScale(sf::Vector2f(2, 2));
-        s.setPosition(a[i].x* 36, a[i].y * 36);
+        s.setPosition((a[i].x)* 36, (a[i].y) * 36);
         s.move(28, 30); //offset
         window->draw(s);
     }

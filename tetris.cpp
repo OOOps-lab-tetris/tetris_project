@@ -131,5 +131,15 @@ void tetris::tet_draw()
         s.move(28, 30); //offset
         window->draw(s);
     }
+    sf::Font font;
+    font.loadFromFile("fonts/Ariel.ttf");
+    sf::Text text;
+    text.setFont(font);
+    std::string scoreString = std::to_string(score);
+    text.setString("score ::" + scoreString);
+    text.setCharacterSize(40);
+    text.setFillColor(sf::Color::Red);
+    text.setStyle(sf::Text::Bold | sf::Text::Underlined);
+    window->draw(text);
     window->display();
 }

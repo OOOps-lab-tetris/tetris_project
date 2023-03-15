@@ -94,8 +94,26 @@ void tetris::tet_check()
             score++;
         }
     }
+    for (int j = 0; j < N; j++)
+        {
+            if (field[0][j])  {
+             tet_over()  ;
+            }
+            window->display();
+    
+        }
+   
     dx = 0; rotate = 0; delay = 0.3;
-    std::cout << score;
+}
+void tetris::tet_over()
+{
+     sf::Texture bk;
+                bk.loadFromFile("images/gameover.jpg");
+                sf::Sprite bkSprite;
+                bkSprite.setTexture(bk);
+                window->draw(bkSprite);
+                
+
 }
 
 void tetris::tet_draw()

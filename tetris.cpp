@@ -94,8 +94,13 @@ void tetris::tet_check()
             score++;
         }
     }
+    for (int j = 0; j < N; j++)
+        {
+            if (field[0][j])  std::cout<<"game over";
+    
+        }
+   
     dx = 0; rotate = 0; delay = 0.3;
-    std::cout << score;
 }
 
 void tetris::tet_draw()

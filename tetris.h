@@ -27,6 +27,7 @@ private:
     bool rotate = 0;
     float timer = 0, delay = 0.3;
 public:
+    void tet_over();
     void tet_event();
     void update_timer(float);
     bool space_check();
@@ -35,6 +36,6 @@ public:
     void tet_timer();
     void tet_check();
     void tet_draw();
-    void tet_over();
+    
 };
 

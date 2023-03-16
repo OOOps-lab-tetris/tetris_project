@@ -133,7 +133,7 @@ void tetris::tet_draw()
             s.setTextureRect(sf::IntRect(field[i][j] * 18, 0, 18, 18));
             s.setScale(sf::Vector2f(2, 2));
             s.setPosition(j * 36, i * 36);
-            s.move(28, 30); //offset
+            s.move(28, 25); //offset
             window->draw(s);
         }
     }
@@ -141,20 +141,16 @@ void tetris::tet_draw()
     for (int i = 0; i < 4; i++)
     {
         s.setTextureRect(sf::IntRect(colorNum * 18, 0, 18, 18));
-        //s.setPosition((a[i].x * 18, a[i].y * 18);
-       // a[i].x+=6;
-        /*if (a[i]) {
-            a[i].x += t;
-            t++;
-        }
-        else {
-            t = 1;
-        }*/
         s.setScale(sf::Vector2f(2, 2));
         s.setPosition((a[i].x)* 36, (a[i].y) * 36);
-        s.move(28, 30); //offset
+        s.move(28, 25); //offset
         window->draw(s);
     }
+    tet_score();
+}
+
+void tetris::tet_score()
+{
     sf::Font font;
     font.loadFromFile("fonts/Ariel.ttf");
     sf::Text text;

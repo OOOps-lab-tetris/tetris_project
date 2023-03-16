@@ -12,7 +12,7 @@ void Game::init_var()
 
 void Game::init_window()
 {
-	vid.height = 800;
+	vid.height = 820;
 	vid.width = 490;
 	this->window=new sf::RenderWindow(this->vid, "Tetris");
 	t.loadFromFile("images/tiles.png");

@@ -115,7 +115,6 @@ void tetris::tet_over()
     float frameheight=800;
     float scaleX=frameWidth/bkSprite.getLocalBounds().width;
     float scaley=frameheight/bkSprite.getLocalBounds().height;
-    // float scaleFactor=std::min(scaleX,scaley);
     bkSprite.setScale(scaleX,scaley);
     window->draw(bkSprite);
                 
@@ -133,7 +132,7 @@ void tetris::tet_draw()
             s.setTextureRect(sf::IntRect(field[i][j] * 18, 0, 18, 18));
             s.setScale(sf::Vector2f(2, 2));
             s.setPosition(j * 36, i * 36);
-            s.move(28, 25); //offset
+            s.move(28, 30); //offset
             window->draw(s);
         }
     }
@@ -143,7 +142,7 @@ void tetris::tet_draw()
         s.setTextureRect(sf::IntRect(colorNum * 18, 0, 18, 18));
         s.setScale(sf::Vector2f(2, 2));
         s.setPosition((a[i].x)* 36, (a[i].y) * 36);
-        s.move(28, 25); //offset
+        s.move(28, 30); //offset
         window->draw(s);
     }
     tet_score();
@@ -161,5 +160,23 @@ void tetris::tet_score()
     text.setFillColor(sf::Color::Red);
     text.setStyle(sf::Text::Bold | sf::Text::Underlined);
     window->draw(text);
+    sf::VertexArray line(sf::Lines, 6);
+
+    // define the first point of the line
+    line[0].position = sf::Vector2f(30, 50);
+    line[0].color = sf::Color::Black;
+
+    // define the second point of the line
+    line[1].position = sf::Vector2f(30, window->getSize().y-50);
+    line[1].color = sf::Color::Black;
+    line[2].position = sf::Vector2f(window->getSize().x-30, window->getSize().y-50);
+    line[2].color = sf::Color::Black;
+    line[3].position = sf::Vector2f(window->getSize().x-30, 50);
+    line[3].color = sf::Color::Black;
+    line[4].position = sf::Vector2f(window->getSize().x-30, window->getSize().y-50);
+    line[4].color = sf::Color::Black;
+    line[5].position = sf::Vector2f(30, window->getSize().y-50);
+    line[5].color = sf::Color::Black;
+    window->draw(line);
     window->display();
 }

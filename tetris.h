@@ -37,6 +37,7 @@ public:
     void tet_check();
     void tet_draw();
     void tet_score();
+    void tet_border();
     
 };
 

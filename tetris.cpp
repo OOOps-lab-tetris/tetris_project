@@ -125,6 +125,9 @@ void tetris::tet_draw()
 {
     Game::window->clear(sf::Color::White);
 
+    tet_border();
+    tet_score();
+
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++)
         {
@@ -145,7 +148,7 @@ void tetris::tet_draw()
         s.move(28, 30); //offset
         window->draw(s);
     }
-    tet_score();
+    window->display();
 }
 
 void tetris::tet_score()
@@ -160,6 +163,11 @@ void tetris::tet_score()
     text.setFillColor(sf::Color::Red);
     text.setStyle(sf::Text::Bold | sf::Text::Underlined);
     window->draw(text);
+   // window->display();
+}
+
+void tetris::tet_border()
+{
     sf::VertexArray line(sf::Lines, 6);
 
     // define the first point of the line
@@ -167,16 +175,15 @@ void tetris::tet_score()
     line[0].color = sf::Color::Black;
 
     // define the second point of the line
-    line[1].position = sf::Vector2f(30, window->getSize().y-50);
+    line[1].position = sf::Vector2f(30, window->getSize().y - 50);
     line[1].color = sf::Color::Black;
-    line[2].position = sf::Vector2f(window->getSize().x-30, window->getSize().y-50);
+    line[2].position = sf::Vector2f(window->getSize().x - 30, window->getSize().y - 50);
     line[2].color = sf::Color::Black;
-    line[3].position = sf::Vector2f(window->getSize().x-30, 50);
+    line[3].position = sf::Vector2f(window->getSize().x - 30, 50);
     line[3].color = sf::Color::Black;
-    line[4].position = sf::Vector2f(window->getSize().x-30, window->getSize().y-50);
+    line[4].position = sf::Vector2f(window->getSize().x - 30, window->getSize().y - 50);
     line[4].color = sf::Color::Black;
-    line[5].position = sf::Vector2f(30, window->getSize().y-50);
+    line[5].position = sf::Vector2f(30, window->getSize().y - 50);
     line[5].color = sf::Color::Black;
     window->draw(line);
-    window->display();
 }

@@ -10,10 +10,12 @@ int main()
 
     tetris game;
 
+
     while (game.game_on())
     {
         float time = clock.getElapsedTime().asSeconds();
         clock.restart();
+        std::cout << time <<std:: endl;
         //timer += time;
         game.update_timer(time);
         //Event e;

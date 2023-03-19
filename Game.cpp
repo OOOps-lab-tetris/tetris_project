@@ -18,6 +18,8 @@ void Game::init_window()
 	t.loadFromFile("images/tiles.png");
 	s = sf::Sprite(t);
 	//window->setVerticalSyncEnabled(true);
+	buffer.loadFromFile("Sound/beep.wav");
+	line_com.setBuffer(buffer);
 }
 
 Game::~Game()

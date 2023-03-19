@@ -91,6 +91,7 @@ void tetris::tet_check()
             k--;
         }
         if (count == N) {
+            line_com.play();
             score++;
         }
     }
@@ -127,6 +128,7 @@ void tetris::tet_draw()
 
     tet_border();
     tet_score();
+   // tet_end_sound();
 
     for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++)
@@ -187,3 +189,4 @@ void tetris::tet_border()
     line[5].color = sf::Color::Black;
     window->draw(line);
 }
+

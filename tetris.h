@@ -38,6 +38,7 @@ public:
     void tet_draw();
     void tet_score();
     void tet_border();
+    //void tet_end_sound();
     
 };
 

@@ -18,7 +18,7 @@ int main()
         std::cout << time <<std:: endl;
         //timer += time;
         game.update_timer(time);
-        //Event e;
+        //Event e
         game.tet_event();
         //// <- Move -> ///
         game.tet_move();

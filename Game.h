@@ -14,6 +14,8 @@ protected:
 	sf::Texture t;
 	sf::Sprite s;
 	sf::VideoMode vid;
+	sf::SoundBuffer buffer;
+	sf::Sound line_com;
 	//sf::Event ev;
 	void init_var();
 	void init_window();

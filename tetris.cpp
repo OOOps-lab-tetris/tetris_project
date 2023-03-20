@@ -67,7 +67,7 @@ void tetris::tet_timer()
             int n = rand() % 7;
             for (int i = 0; i < 4; i++)
             {
-                a[i].x = figures[n][i] % 2;
+                a[i].x = figures[n][i] % 2 + 4;
                 a[i].y = figures[n][i]/2;
             }
         }
@@ -130,7 +130,7 @@ void tetris::tet_draw()
     tet_score();
    // tet_end_sound();
 
-    for (int i = 0; i < M; i++) {
+   for (int i = 0; i < M; i++) {
         for (int j = 0; j < N; j++)
         {
             if (field[i][j] == 0) continue;
@@ -141,7 +141,6 @@ void tetris::tet_draw()
             window->draw(s);
         }
     }
-    int t = 4;
     for (int i = 0; i < 4; i++)
     {
         s.setTextureRect(sf::IntRect(colorNum * 18, 0, 18, 18));

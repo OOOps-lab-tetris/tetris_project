@@ -23,7 +23,7 @@ private:
         3,5,7,6, // J
         2,3,4,5, // O
     };
-    int dx =0,colorNum = 1,score=0;
+    int dx =5,colorNum = 1,score=0;
     bool rotate = 0;
     float timer = 0, delay = 0.3;
 public:

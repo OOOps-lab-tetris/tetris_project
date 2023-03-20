@@ -14,10 +14,10 @@ int main()
     while (game.game_on())
     {
         float time = clock.getElapsedTime().asSeconds();
-        clock.restart();
-        std::cout << time <<std:: endl;
-        //timer += time;
         game.update_timer(time);
+        clock.restart();
+       // std::cout << time <<std:: endl;
+        //timer += time;
         //Event e
         game.tet_event();
         //// <- Move -> ///

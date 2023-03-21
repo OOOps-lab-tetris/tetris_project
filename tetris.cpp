@@ -95,6 +95,18 @@ void tetris::tet_check()
             line_del++;
         }
     }
+    if (score >= 500) {
+        delay = 0.08;
+    }
+    else if (score >= 300) {
+        delay = 0.14;
+    }
+    else if (score >= 100) {
+        delay = 0.2;
+    }
+    else {
+        delay = 0.3;
+    }
     for (int j = 0; j < N; j++)
         {
             if (field[0][j])  {
@@ -104,7 +116,7 @@ void tetris::tet_check()
     
         }
    
-    dx = 0; rotate = 0; delay = 0.3;
+    dx = 0; rotate = 0;
 }
 void tetris::tet_over()
 {

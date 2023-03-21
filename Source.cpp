@@ -29,6 +29,8 @@ int main()
         ///////check lines//////////
         game.tet_check();
 
+        game.tet_scal();
+
         /////////draw//////////
         game.tet_draw();
       

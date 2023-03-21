@@ -92,7 +92,7 @@ void tetris::tet_check()
         }
         if (count == N) {
             line_com.play();
-            score++;
+            line_del++;
         }
     }
     for (int j = 0; j < N; j++)
@@ -187,5 +187,26 @@ void tetris::tet_border()
     line[5].position = sf::Vector2f(30, window->getSize().y - 50);
     line[5].color = sf::Color::Black;
     window->draw(line);
+}
+
+void tetris::tet_scal()
+{
+    while (line_del>0) {
+        if (line_del >= 4) {
+            score += 60;
+            line_del -= 4;
+        }else if (line_del >= 3) {
+            score += 45;
+            line_del -= 3;
+         }
+        else if (line_del >= 2) {
+            score += 25;
+            line_del -= 2;
+        }
+        else if (line_del >= 1) {
+            score += 10;
+            line_del -= 1;
+        }
+    }
 }
 

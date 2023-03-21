@@ -23,7 +23,7 @@ private:
         3,5,7,6, // J
         2,3,4,5, // O
     };
-    int dx =5,colorNum = 1,score=0;
+    int dx =5,colorNum = 1,score=0,line_del=0;
     bool rotate = 0;
     float timer = 0, delay = 0.3;
 public:
@@ -38,7 +38,7 @@ public:
     void tet_draw();
     void tet_score();
     void tet_border();
-    //void tet_end_sound();
+    void tet_scal();
     
 };
 

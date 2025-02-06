@@ -95,7 +95,3 @@ This project implements the classic Tetris game using the SFML (Simple and Fast 
 *   **Better Sound Design:** Add more sound effects and background music.
 *   **Input Handling:** Decouple input from the game loop for more responsive controls.
 *   **Refactor Collision Detection:** Improve the efficiency and readability of the collision detection code.
-
-## License
-
-This project is released under the MIT License.  See the `LICENSE` file for details.
